@@ -1,0 +1,224 @@
+.left-menu{
+  //background-color: #7968adf7;
+  background-color: #1F0768;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  color: white;
+  overflow-y: scroll;
+  .logo{
+    padding: 15px 20px;
+    h2{
+      color: orange;
+    }
+    border-bottom: 1px solid white;
+  }
+  .nav-menu{
+    .accordian-section{
+      a{
+        color: white;
+        text-decoration: none;
+      }
+      .accordion{
+        padding: 22px 32px;
+        font-size: 18px;
+        cursor: pointer;
+        border-bottom: 1px solid #180445;
+
+      }
+
+      .panel{
+        background-color: #180445;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: max-height .3s ease-out;
+        backdrop-filter: blur(30px);
+
+        &.active-panel{
+          max-height: 1000px;
+          transition: max-height .3s ease-in;
+        }
+        ul{
+          list-style: none;
+          li{
+            padding: 15px 40px;
+            a{
+              color: white;
+              font-size: 15px;
+              text-decoration: none;
+            }
+
+          }
+        }
+      }
+    }
+    ul{
+      li{
+
+        a{
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.top-bar{
+  width: calc(100% - 220px);
+  margin-left: auto;
+  background-color: white;
+}
+
+.center-block{
+  margin-top: 50px;
+  padding-left: 30px;
+  padding-top: 30px;
+  background-color: #f0f1f3;
+  .d-flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 100%;
+    .card-one{
+      width: calc(25% - 30px);
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      height: fit-content;
+      box-shadow: 0px 10px 20px 0px rgb(229 229 229 / 75%);
+      .d-flex{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .icons{
+          width: 80px;
+          height: 80px;
+          background-color: #d1f3e0;
+          border-radius: 50%;
+          &.icon-te{
+            background-color: #e1f1ff;
+          }
+          &.icon-pe{
+            background-color: #fff2d8;
+          }
+          &.icon-de{
+            background-color: #ffeaea;
+            img{
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+        }
+        .content{
+          .students{
+            color: #a8a8a8;
+            margin-bottom: 5px;
+            font-weight: 500;
+          }
+          p{
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+section {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+section:nth-of-type(odd) {
+  background-color: #f0f0f0;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffffff;
+}
+
+
+
+
+
+
+
+
+section.horizontal {
+  overflow-x: hidden;
+}
+
+section.horizontal .pin-wrap,
+section.horizontal .animation-wrap {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+
+
+section.horizontal .item {
+  position: relative;
+  padding: 150px 80px;
+  flex: 0 0 500px;
+  height: calc(100vh - 300px);
+  display: flex;
+  align-items: center;
+  line-height: 1.7;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: transparent;
+}
+
+section.horizontal .item:before {
+  position: absolute;
+  font-size: 100px;
+  opacity: .13;
+  font-weight: bold;
+  z-index: -1;
+  -webkit-transform: translate(-30px, -50px);
+  transform: translate(-30px, -50px);
+  line-height: 1;
+}
+
+
+
+
+section.horizontal .animation-wrap.to-right {
+  counter-reset: item;
+  float: left;
+}
+
+section.horizontal .animation-wrap.to-left {
+  counter-reset: item 11;
+  float: right;
+}
+
+section.horizontal .animation-wrap.to-right .item:before {
+  counter-increment: item;
+  content: counter(item);
+}
+
+section.horizontal .animation-wrap.to-left .item:before {
+  counter-increment: item -1;
+  content: counter(item);
+}
+
+
+
+section.horizontal .animation-wrap .item:nth-child(2n+2) {
+  align-items: flex-start;
+}
+
+section.horizontal .animation-wrap .item:nth-child(4n+4) {
+  align-items: flex-end;
+}
